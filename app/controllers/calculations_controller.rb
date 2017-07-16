@@ -16,14 +16,14 @@ class CalculationsController < ApplicationController
   def flexible_square_root
 
     @user_number = params["a_number"].to_f
-    @squared_root = Math.sqrt(@user_number)
+    @squared_root = Math.sqrt(@user_number).to_f
     
-    render("calculations/flexible_square_root_template.html.erb")
+    render("calculations/flexible_square_root.html.erb")
   end
+  
   
   #Flexible Payment Calculator  
   def flexible_payment
-  #needs formatting still  
     
     @apr = (params["a_number"].to_f)/100
     @years = params["a_number2"].to_i
