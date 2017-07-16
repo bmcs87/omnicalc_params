@@ -26,30 +26,34 @@ class CalculationsController < ApplicationController
   
   #Flexible Payment Calculator  
   def flexible_payment
+  #needs formatting still  
     
-    @apr = params["a_number"].to_i
+    @apr = params["a_number"].to_f
     @principal = params["a_number2"].to_i
     @years = params["a_number3"].to_i
-    @monthly_payment = ( (@apr/12)/100 /(1 - (1+ (@apr/12)/100)**-(@years*12 )))*@principal
+    @monthly_payment = ( (@apr/12)/1000 /(1 - (1+ (@apr/12)/1000)**-(@years*12 )))*@principal 
     
     render("calculations/flexible_payment.html.erb")
   end
   
   #Flexible Random Example
-  def flexible_random_example
+  def flexible_random
     
-    #@apr = params["a_number"].to_i
+    @random_min = params["a_number"].to_f
+    @random_max = params["a_number2"].to_f
+    @random_number = Random.new.rand(@random_min..@random_max) 
     
-    render("calculations/flexible_random_example.html.erb")
+    render("calculations/flexible_random.html.erb")
   end
   
   
   #Square Form
-  def square_form
+  def square_new
     
-    #@apr = params["a_number"].to_i
+    @the_user_number = params["a_number"].to_i
+    @squared_number = @the_user_number**2
     
-    render("calculations/square_form.html.erb")
+    render("calculations/square_new.html.erb")
   end
   
   

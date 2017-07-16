@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   
   get("/flexible/payment/:a_number/:a_number2/:a_number3", { :controller => "calculations", :action => "flexible_payment" })
   
-  get("/flexible/random/example/:a_number", { :controller => "calculations", :action => "flexible_random_example" })
+  get("/flexible/random/:a_number/:a_number2", { :controller => "calculations", :action => "flexible_random" })
   
-  get("/square/form/:a_number", { :controller => "calculations", :action => "square_form" })
+  get("/square/new/:a_number", { :controller => "calculations", :action => "square_new" })
   
   get("/square/root/form/:a_number", { :controller => "calculations", :action => "square_root_form" })
   
