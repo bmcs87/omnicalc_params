@@ -33,6 +33,7 @@ class CalculationsController < ApplicationController
     render("calculations/flexible_payment.html.erb")
   end
   
+  
   #Flexible Random Example
   def flexible_random
     
@@ -46,9 +47,11 @@ class CalculationsController < ApplicationController
   
   #Square Form
   def square_new
+    # The incoming parameters for this action look like {"the_user_number"=>"5"}
+    # Rails stores that hash in a variable called params
     
-    @the_user_number = params["a_number"].to_i
-    @squared_number = @the_user_number**2
+    @the_number = params["the_user_number"].to_f
+    @the_square = @the_number**2
     
     render("calculations/square_new.html.erb")
   end

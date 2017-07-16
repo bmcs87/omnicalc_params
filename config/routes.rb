@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   get("/flexible/random/:a_number/:a_number2", { :controller => "calculations", :action => "flexible_random" })
   
-  get("/square/new/:a_number", { :controller => "calculations", :action => "square_new" })
+  get("/square_new", { :controller => "calculations", :action => "square_new" })
   
   get("/square/root/form/:a_number", { :controller => "calculations", :action => "square_root_form" })
   
