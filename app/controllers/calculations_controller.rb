@@ -26,8 +26,8 @@ class CalculationsController < ApplicationController
   #needs formatting still  
     
     @apr = (params["a_number"].to_f)/100
-    @principal = params["a_number2"].to_i
-    @years = params["a_number3"].to_i
+    @years = params["a_number2"].to_i
+    @principal = params["a_number3"].to_i
     @monthly_payment = ( (@apr/12)/100 /(1 - (1+ (@apr/12)/100)**-(@years*12 )))*@principal
     
     render("calculations/flexible_payment.html.erb")
