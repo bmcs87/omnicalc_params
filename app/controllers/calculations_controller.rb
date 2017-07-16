@@ -46,14 +46,14 @@ class CalculationsController < ApplicationController
   
   
   #Square Form
-  def square_new
+  def square_form
     # The incoming parameters for this action look like {"the_user_number"=>"5"}
     # Rails stores that hash in a variable called params
     
     @the_number = params["the_user_number"].to_f
     @the_square = @the_number**2
     
-    render("calculations/square_new.html.erb")
+    render("calculations/square_form_template.html.erb")
   end
   
   
