@@ -1,0 +1,25 @@
+<h1>Payment Calculations</h1>
+
+<form action="/payment/new">
+  <div>
+    <label for="number_input">APR</label>
+    <input id="number_input" type="text" name="the_user_number" placeholder="Ex. 4.12"> 
+  </div>
+
+  <div>
+    <label for="number_input">Number in Years</label>
+    <input id="number_input" type="text" name="the_user_number2" placeholder="How many years to repay?"> 
+  </div>
+  
+  <div>
+    <label for="number_input">Principal</label>
+    <input id="number_input" type="text" name="the_user_number3" placeholder="How much principal?"> 
+  </div>
+
+  <button type="submit">
+    Calculate monthly payment
+  </button>
+  
+<p>A <%= @years %> year loan of <%= number_to_currency(@principal, precision: 0) %>, with an annual interest rate of <%= number_to_percentage(@apr, precision: 2) %>, requires a monthly payment of <%= number_to_currency(@monthly_payment, precision: 2) %>.</p>
+  
+</form>
