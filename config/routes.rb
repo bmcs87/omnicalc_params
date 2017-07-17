@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get("/square_root/new", { :controller => "calculations", :action => "square_root_form" })
   
-  get("/payment_form/:a_number", { :controller => "calculations", :action => "payment_form" })
+  get("/payment/new", { :controller => "calculations", :action => "payment_form" })
   
   get("/random/form/:a_number", { :controller => "calculations", :action => "random_form" })
   
