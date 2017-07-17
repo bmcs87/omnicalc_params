@@ -70,9 +70,9 @@ class CalculationsController < ApplicationController
   #Payment form
   def payment_form
     
-    @apr = (params["the_user_number"].to_f)
-    @years = params["the_user_number2"].to_i
-    @principal = params["the_user_number3"].to_i
+    @apr = (params["user_apr"].to_f)
+    @years = params["user_years"].to_i
+    @principal = params["user_principal"].to_i
     @monthly_payment = ( (@apr/12)/100 /(1 - (1+ (@apr/12)/100)**-(@years*12 )))*@principal
     
     render("calculations/payment_form.html.erb")
