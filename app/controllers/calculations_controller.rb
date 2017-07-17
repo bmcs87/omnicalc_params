@@ -60,9 +60,10 @@ class CalculationsController < ApplicationController
   #Square Root Form
   def square_root_form
     
-    #@apr = params["a_number"].to_i
+    @the_number = params["the_user_number"].to_f
+    @squared_root = Math.sqrt(@the_number).to_f
     
-    render("calculations/square_root_form.html.erb")
+    render("calculations/square_root_form_template.html.erb")
   end
   
   
