@@ -1,13 +1,49 @@
 <h1>Random Form</h1>
 
-<form action="/square/results">
-    <div>
-        <label>
-            Enter a number
-        </label>
-        
-        <input type = "text" name = "the_user_number">
-    </div>
-    
-    <button>Calculation Square</button>
+<form action="/random/new">
+  <div>
+    <label for="min_input">Minimum</label>
+    <input id="min_input" type="text" name="user_min" placeholder="Ex. 1.5"> 
+  </div>
+
+  <div>
+    <label for="max_input">Maximum</label>
+    <input id="max_input" type="text" name="user_max" placeholder="Ex. 4.5"> 
+  </div>
+
+  <button type="submit">
+    Pick random number
+  </button>
+  
+<h2>
+  Random Results
+</h2>
+
+<dl>
+  <dt>
+    Minimum
+  </dt>
+  <dd>
+    <%= @random_min %>
+  </dd>
+
+  <dt>
+    Maximum
+  </dt>
+  <dd>
+    <%= @random_max %>
+  </dd>
+
+  <dt>
+    Random Number
+  </dt>
+  <dd>
+    <%= @random_number %>
+  </dd>
+</dl>
+
+<a href="/random/new">
+  Pick another random number
+</a>
+
 </form>

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   
   get("/payment/new", { :controller => "calculations", :action => "payment_form" })
   
-  get("/random/form/:a_number", { :controller => "calculations", :action => "random_form" })
+  get("/random/new", { :controller => "calculations", :action => "random_form" })
   
   get("/word/count/form/:a_number", { :controller => "calculations", :action => "word_count_form" })
     

@@ -82,7 +82,9 @@ class CalculationsController < ApplicationController
   #Random form
   def random_form
     
-    #@apr = params["a_number"].to_i
+    @random_min = params["user_min"].to_f
+    @random_max = params["user_max"].to_f
+    @random_number = Random.new.rand(@random_min..@random_max) 
     
     render("calculations/random_form.html.erb")
   end
