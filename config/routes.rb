@@ -10,11 +10,19 @@ Rails.application.routes.draw do
   
   get("/square/new", { :controller => "calculations", :action => "square_form" })
 
+  get("/square/results", { :controller => "calculations", :action => "process_square_form" })
+
   get("/square_root/new", { :controller => "calculations", :action => "square_root_form" })
+  
+  get("/square_root/results", { :controller => "calculations", :action => "process_square_root_form" })
   
   get("/payment/new", { :controller => "calculations", :action => "payment_form" })
   
+  get("/payment/results", { :controller => "calculations", :action => "process_payment_form" })
+  
   get("/random/new", { :controller => "calculations", :action => "random_form" })
+  
+  get("/random/results", { :controller => "calculations", :action => "process_random_form" })
   
   get("/word/count/form/:a_number", { :controller => "calculations", :action => "word_count_form" })
     
